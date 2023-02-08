@@ -1,11 +1,15 @@
 <script>
-import AppTitle from "./components/AppTitle.vue"
-import AppHero from "./components/AppHero.vue"
+import AppMain from "./components/AppMain.vue"
+import AppHeader from "./components/AppHeader.vue"
+import AppFooter from "./components/AppFooter.vue"
+
 
 export default {
   components: {
-    AppTitle,
-    AppHero,
+    AppHeader,
+    AppMain,
+    AppFooter,
+    
   },
 
   data() {
@@ -17,16 +21,12 @@ export default {
 
 <template>
   <div class="container">
-    <AppTitle />
-    <AppHero />
+    <AppHeader />
+    <AppMain />
+    <AppFooter />
   </div>
 </template>
 
-<style>
-
-body {
-  background-image: url('https://cdn.pixabay.com/photo/2012/08/25/22/22/saturn-54999_960_720.jpg');
-  background-size: cover;
-}
-
+<style lang="scss">
+@use "./styles/main.scss";
 </style>
