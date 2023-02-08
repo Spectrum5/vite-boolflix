@@ -1,15 +1,17 @@
 <script>
+import FilmCard from './FilmCard.vue';
 export default {
-    data() {
-        return {
-            name: 'AppMain',
-        }
+    name: 'AppMain',
+    components: {
+        FilmCard,
     }
 }
 </script>
 
 <template>
-
+    <div>
+        <FilmCard />
+    </div>
 </template>
 
 <style lang="scss" scoped>
