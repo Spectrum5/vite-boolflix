@@ -12,6 +12,7 @@ export default {
 
 <template>
     <div v-for="film in store.listFilm">
+        <img :src="`http://image.tmdb.org/t/p/w500/${film.poster_path}`" alt="">
         <h3>{{ film.title }}</h3>
         <p>{{ film.original_title }}</p>
         <p>{{ film.original_language }}</p>
