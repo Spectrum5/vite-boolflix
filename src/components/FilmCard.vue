@@ -18,6 +18,13 @@ export default {
         <p>{{ film.original_language }}</p>
         <p>{{ film.vote_average }}</p>
     </div>
+    <div v-for="tv in store.listTv">
+        <img :src="`http://image.tmdb.org/t/p/w500/${tv.poster_path}`" alt="">
+        <h3>{{ tv.name }}</h3>
+        <p>{{ tv.original_name }}</p>
+        <p>{{ tv.original_language }}</p>
+        <p>{{ tv.vote_average }}</p>
+    </div>
 </template>
 
 <style lang="scss" scoped>
