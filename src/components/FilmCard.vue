@@ -6,6 +6,11 @@ export default {
         return {
             store,
         }
+    },
+    methods: {
+        startsCalcolate(vote) {
+            return Math.floor(vote / 2);
+        }
     }
 }
 </script>
@@ -24,7 +29,11 @@ export default {
             <img class="flag" src="../assets/unking.png" alt="">
         </div>
 
-        <p>{{ film.vote_average }}</p>
+        <!-- Stelle per il voto del film -->
+        <div>
+            <font-awesome-icon icon="fa-solid fa-star" v-for=" index in 5"
+                :class="startsCalcolate(film.vote_average) > index ? 'gold' : 'gray'" />
+        </div>
     </div>
     <div v-for="tv in store.listTv">
         <img :src="`http://image.tmdb.org/t/p/w500/${tv.poster_path}`" alt="">
@@ -39,14 +48,24 @@ export default {
             <img class="flag" src="../assets/unking.png" alt="">
         </div>
 
-        <p>{{ tv.vote_average }}</p>
+        <!-- Stelle per il voto del serie tv -->
+        <div>
+            <font-awesome-icon icon="fa-solid fa-star" v-for=" index in 5"
+                :class="startsCalcolate(tv.vote_average) > index ? 'gold' : 'gray'" />
+        </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-
 .flag {
     width: 50px;
 }
 
+.gray {
+    color: #ededed;
+}
+
+.gold {
+    color: gold;
+}
 </style>
