@@ -37,8 +37,8 @@ export default {
                 })
                     .then((response) => {
                         this.store.listTv = response.data.results
-                        console.log(this.store.listTv)
                     })
+                    this.store.fullList = this.store.listFilm.concat(this.store.listTv);
         },
     },
 }
@@ -47,7 +47,7 @@ export default {
 <template>
     <!-- creazione template html -->
     <header>
-        <section class="first-section-header">
+        <section class="first-section-header p-3">
             <div class="d-flex justify-content-between align-item-center">
                 <AppLogo />
                 <SearchBar @filter="filtering" />

@@ -4,4 +4,5 @@ export const store = reactive({
    listFilm: [],
    listTv: [],
    title: '',
+   fullList: [],
 });
