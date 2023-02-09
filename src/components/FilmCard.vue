@@ -16,8 +16,10 @@ export default {
 </script>
 
 <template>
-    <div v-for="film in store.listFilm">
-        <img :src="`http://image.tmdb.org/t/p/w500/${film.poster_path}`" alt="">
+    <!-- card stampata dalla list film -->
+    <div class="card" v-for="film in store.listFilm">
+        <img class="poster" :src="`http://image.tmdb.org/t/p/w500/${film.poster_path}`" alt="">
+        <div class="text-box"></div>
         <h3>{{ film.title }}</h3>
         <p>{{ film.original_title }}</p>
 
@@ -35,8 +37,10 @@ export default {
                 :class="startsCalcolate(film.vote_average) > index ? 'gold' : 'gray'" />
         </div>
     </div>
-    <div v-for="tv in store.listTv">
-        <img :src="`http://image.tmdb.org/t/p/w500/${tv.poster_path}`" alt="">
+        <!-- card stampata dalla list serie TV -->
+    <div class="card" v-for="tv in store.listTv">
+        <img class="poster" :src="`http://image.tmdb.org/t/p/w500/${tv.poster_path}`" alt="">
+        <div class="text-box"></div>
         <h3>{{ tv.name }}</h3>
         <p>{{ tv.original_name }}</p>
 
@@ -57,6 +61,31 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.card {
+    width: calc(100% / 5 - 10px);
+    margin: 5px;
+    background-color: rgb(44, 44, 44);
+    position: relative;
+
+    .poster {
+        object-fit: cover;
+    }
+
+    .text-box {
+        position: absolute;
+        content: '';
+        bottom: 0%;
+        left: 0%;
+        width: 100%;
+        height: 160px;
+        text-align: center;
+
+        >* {
+            height: 40px;
+        }
+    }
+}
+
 .flag {
     width: 50px;
 }
