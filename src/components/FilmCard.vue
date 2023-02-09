@@ -18,10 +18,10 @@ export default {
 
         <!-- Bandiera per la lingua dei film-->
         <div v-if="film.original_language === 'it'">
-            <img src="../assets/italy.png" alt="">
+            <img class="flag" src="../assets/italy.png" alt="">
         </div>
         <div v-else-if="film.original_language === 'en'">
-            <img src="../assets/unking.png" alt="">
+            <img class="flag" src="../assets/unking.png" alt="">
         </div>
 
         <p>{{ film.vote_average }}</p>
@@ -33,10 +33,10 @@ export default {
 
         <!-- Bandiera per la lingua delle serie TV -->
         <div v-if="tv.original_language === 'it'">
-            <img src="../assets/italy.png" alt="">
+            <img class="flag" src="../assets/italy.png" alt="">
         </div>
         <div v-else-if="tv.original_language === 'en'">
-            <img src="../assets/unking.png" alt="">
+            <img class="flag" src="../assets/unking.png" alt="">
         </div>
 
         <p>{{ tv.vote_average }}</p>
@@ -44,5 +44,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+.flag {
+    width: 50px;
+}
 
 </style>
