@@ -12,20 +12,14 @@ export default {
     components: {
         FilmCard,
     },
-    computed: {
-        itemSearched() {
-            let fullList = this.store.listFilm.concat(this.store.listTv)
-            return fullList.length;
-        }
-    }
 }
 </script>
 
 <template>
     <main>
         <section class="first-section-main text-white">
-            <div class="p-2">
-                <h2>Hai trovato {{ itemSearched }} trasmissioni ( {{ store.listTv.length }} sono serie TV )</h2>
+            <div class="information" v-if="store.active === true">
+            <h2>Hai trovato {{store.fullList.length}} trasmissioni ( {{store.listTv.length}} sono serie TV )</h2>
             </div>
             <div class="d-flex flex-wrap">
                 <FilmCard />

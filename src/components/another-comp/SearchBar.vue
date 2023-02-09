@@ -2,7 +2,7 @@
     <div>
         <form action="" @submit.prevent="$emit('filter')">
             <input type="text" v-model="store.title">
-            <button > Cerca</button>
+            <button  @click="store.active =true" > Cerca</button>
         </form>
     </div>
 </template>

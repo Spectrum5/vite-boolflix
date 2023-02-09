@@ -5,4 +5,5 @@ export const store = reactive({
    listTv: [],
    title: '',
    fullList: [],
+   active : false,
 });

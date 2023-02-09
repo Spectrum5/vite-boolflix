@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <!-- card stampata dalla list film -->
+    <!-- card  -->
     <div class="card" v-for="film in store.listFilm">
         <img class="poster" :src="`http://image.tmdb.org/t/p/w500/${film.poster_path}`" alt="">
 
@@ -24,7 +24,7 @@ export default {
         <h2>{{ film.title }}{{ film.name }}</h2>
         <p>{{ film.original_title }}{{ film.original_name }}</p>
 
-        <!-- Bandiera per la lingua dei film-->
+        <!-- Bandiera per la lingua-->
         <div v-if="film.original_language === 'it'">
             <img class="flag" src="../assets/italy.png" alt="">
         </div>
@@ -32,34 +32,12 @@ export default {
             <img class="flag" src="../assets/unking.png" alt="">
         </div>
 
-        <!-- Stelle per il voto del film -->
+        <!-- Stelle per il voto-->
         <div>
             <font-awesome-icon icon="fa-solid fa-star" v-for=" index in 5"
                 :class="startsCalcolate(film.vote_average) > index ? 'gold' : 'gray'" />
         </div>
     </div>
-
-    <!-- card stampata dalla list serie TV -->
-    <!-- <div class="card" v-for="tv in store.listTv">
-        <img class="poster" :src="`http://image.tmdb.org/t/p/w500/${tv.poster_path}`" alt="">
-        <div class="text-box"></div>
-        <h3>{{ tv.name }}</h3>
-        <p>{{ tv.original_name }}</p>
-
-
-        <div v-if="tv.original_language === 'it'">
-            <img class="flag" src="../assets/italy.png" alt="">
-        </div>
-        <div v-else-if="tv.original_language === 'en'">
-            <img class="flag" src="../assets/unking.png" alt="">
-        </div>
-
-
-        <div>
-            <font-awesome-icon icon="fa-solid fa-star" v-for=" index in 5"
-                :class="startsCalcolate(tv.vote_average) > index ? 'gold' : 'gray'" />
-        </div>
-    </div> -->
     
 </template>
 
