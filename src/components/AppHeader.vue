@@ -15,6 +15,7 @@ export default {
                 params: {
                     api_key: 'a40df00af579e7e6ad5cfe0c0085d2a1',
                     query: this.store.title,
+                    language: 'it-IT'
                 }
             })
                 .then((response) => {
@@ -24,6 +25,7 @@ export default {
                     params: {
                         api_key: 'a40df00af579e7e6ad5cfe0c0085d2a1',
                         query: this.store.title,
+                        language: 'it-IT'
                     }
                 })
                     .then((response) => {
