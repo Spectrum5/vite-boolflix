@@ -5,5 +5,7 @@ export const store = reactive({
    listTv: [],
    title: '',
    fullList: [],
-   active : false,
+   active: false,
+   trendFilmList: [],
+   bestTvSeries: [],
 });

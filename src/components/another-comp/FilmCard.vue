@@ -1,5 +1,5 @@
 <script>
-import { store } from '../store';
+import { store } from '../../store';
 export default {
     name: 'FilmCard',
     data() {
@@ -26,10 +26,10 @@ export default {
 
         <!-- Bandiera per la lingua-->
         <div v-if="film.original_language === 'it'">
-            <img class="flag" src="../assets/italy.png" alt="">
+            <img class="flag" src="../../assets/italy.png" alt="">
         </div>
         <div v-else-if="film.original_language === 'en'">
-            <img class="flag" src="../assets/unking.png" alt="">
+            <img class="flag" src="../../assets/unking.png" alt="">
         </div>
 
         <!-- Stelle per il voto-->
@@ -38,12 +38,12 @@ export default {
                 :class="startsCalcolate(film.vote_average) > index ? 'gold' : 'gray'" />
         </div>
     </div>
-    
+
 </template>
 
 <style lang="scss" scoped>
 .card {
-    width: calc(100% / 6 - 2px);
+    width: calc(100% / 5 - 2px);
     margin: 1px;
     background-color: rgb(44, 44, 44);
     position: relative;
@@ -60,6 +60,7 @@ export default {
         width: 100%;
         height: 160px;
         text-align: center;
+        background-color: rgba(57, 56, 56, .5);
 
         h2 {
             height: 70px;
