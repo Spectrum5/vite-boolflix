@@ -43,10 +43,16 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-    width: calc(100% / 5 - 2px);
-    margin: 1px;
+    width: calc(100% / 5 - 6px);
+    margin: 3px;
     background-color: rgb(44, 44, 44);
     position: relative;
+    height: 550px;
+
+    &:hover {
+        transform: scale(1.1);
+        z-index: 10;
+    }
 
     .poster {
         object-fit: cover;

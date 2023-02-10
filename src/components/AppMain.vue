@@ -23,15 +23,16 @@ export default {
     <main>
         <section class="first-section-main text-white">
             <div class="information" v-if="store.active === true">
-                <h2>Hai trovato {{ store.fullList.length }} trasmissioni ( {{ store.listTv.length }} sono serie TV )</h2>
+                <h2>Hai trovato {{ store.fullList.length }} trasmissioni ( {{ store.listTv.length }} sono serie TV )
+                </h2>
             </div>
-            <div class="d-flex flex-wrap">
-                <div>
-                    <StartTrendFilm :trendList="store.trendFilmList" />
-                </div>
-                <div>
-                    <StartBestSeries :seriesList="store.bestTvSeries" />
-                </div>
+            <div>
+                <StartTrendFilm :trendList="store.trendFilmList" />
+            </div>
+            <div>
+                <StartBestSeries :seriesList="store.bestTvSeries" />
+            </div>
+            <div class="film-list d-flex flex-wrap">
                 <FilmCard />
             </div>
         </section>
@@ -41,5 +42,10 @@ export default {
 <style lang="scss" scoped>
 .first-section-main {
     background-color: black;
+}
+
+.film-list {
+    margin: calc(100% - 70px);
+    margin: 35px;
 }
 </style>
