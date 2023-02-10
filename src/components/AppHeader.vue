@@ -45,8 +45,7 @@ export default {
             });
         axios.get('https://api.themoviedb.org/3/tv/popular?api_key=a40df00af579e7e6ad5cfe0c0085d2a1&language=en-US&page=1')
             .then((response) => {
-                this.store.bestTvSeries = response.data.results
-                console.log(response.data.results)
+                this.store.bestTvSeries = response.data.results;
             })
     },
 }
