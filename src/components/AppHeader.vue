@@ -25,17 +25,17 @@ export default {
             })
                 .then((response) => {
                     this.store.listFilm = response.data.results;
-                }),
-                axios.get('https://api.themoviedb.org/3/search/tv', {
-                    params: {
-                        api_key: 'a40df00af579e7e6ad5cfe0c0085d2a1',
-                        query: this.store.title,
-                    }
-                })
-                    .then((response) => {
-                        this.store.listTv = response.data.results
+                    axios.get('https://api.themoviedb.org/3/search/tv', {
+                        params: {
+                            api_key: 'a40df00af579e7e6ad5cfe0c0085d2a1',
+                            query: this.store.title,
+                        }
                     })
-            this.store.fullList = this.store.listFilm.concat(this.store.listTv);
+                        .then((response) => {
+                            this.store.listTv = response.data.results;
+                            this.store.fullList = this.store.listFilm.concat(this.store.listTv);
+                        })
+                })
         },
     },
     created() {
