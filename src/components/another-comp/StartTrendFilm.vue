@@ -21,21 +21,21 @@ export default {
             <section id="section1">
                 <a href="#section3" class="arrow__btn">‹</a>
                 <div class="item" v-for="index in 5">
-                    <img :src="`http://image.tmdb.org/t/p/w500/${trendList[index].poster_path}`" alt="">
+                    <img :src="`http://image.tmdb.org/t/p/w500/${trendList[index]?.poster_path}`" alt="">
                 </div>
                 <a href="#section2" class="arrow__btn">›</a>
             </section>
             <section id="section2">
                 <a href="#section1" class="arrow__btn">‹</a>
                 <div class="item" v-for=" index in 5">
-                    <img :src="`http://image.tmdb.org/t/p/w500/${trendList[index + 5].poster_path}`" alt="">
+                    <img :src="`http://image.tmdb.org/t/p/w500/${trendList[index + 5]?.poster_path}`" alt="">
                 </div>
                 <a href="#section3" class="arrow__btn">›</a>
             </section>
             <section id="section3">
                 <a href="#section2" class="arrow__btn">‹</a>
                 <div class="item" v-for=" index in 5">
-                    <img :src="`http://image.tmdb.org/t/p/w500/${trendList[index + 10].poster_path}`" alt="">
+                    <img :src="`http://image.tmdb.org/t/p/w500/${trendList[index + 10]?.poster_path}`" alt="">
                 </div>
                 <a href="#section1" class="arrow__btn">›</a>
             </section>

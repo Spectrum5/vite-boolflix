@@ -47,12 +47,11 @@ export default {
     margin: 3px;
     background-color: rgb(44, 44, 44);
     position: relative;
-    height: 550px;
 
-    &:hover {
-        transform: scale(1.1);
+    &:hover { 
+        transform: scale(1.2);
         z-index: 10;
-    }
+      }
 
     .poster {
         object-fit: cover;
